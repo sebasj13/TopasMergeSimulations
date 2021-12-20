@@ -1,8 +1,15 @@
 # topas-merge-simulations
 
-## Python script to combine the statistical results of a TOPAS simulation that was split up into multiple batches.
+## Python script to combine the statistical results of a TOPAS simulation that was split up into multiple batches
+
+## At the top of the script, specify:
+- the name of the output file
+- the input files in a list
+- the number of histories used for each file (in order)
 
 ### Assumes a ".csv" input file format from a TOPAS Scorer with the following header format:
+
+
 
 \# TOPAS Version: {...}  
 \# Parameter File: {...}.txt  
@@ -16,11 +23,6 @@ Voxel Coordinate X, Voxel Coordinate Y, Voxel Coordinate Z, {Sum/Mean} Value, St
                  .   
                  .   
                  .   
-
-## At the top of the script, specify:
-- the name of the output file
-- the input files in a list
-- the number of histories used for each file (in order)
-
-
+  
+  
 Works using Python3, but written without any external dependencies. 
