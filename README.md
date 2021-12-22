@@ -3,6 +3,9 @@
 ## Python script to combine the statistical results of a TOPAS simulation that was split up into multiple batches
 
 ## At the top of the script, specify:
+
+<img src="https://user-images.githubusercontent.com/87897942/147073837-7a2aff53-27af-454d-a530-6531a9c13001.png" width=426 height=279>
+
 - the name of the output file
 - the input files in a list
 - the number of histories used for each file (in order)
