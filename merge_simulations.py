@@ -95,16 +95,18 @@ def combine_batches(files, histories):
             (
                 (
                     (
-                        (hist_0 - 1) * initial_stddev[j]
-                        + (hist_1 - 1) * additional_stddev[j]
+                        (hist_0 - 1) * initial_stddev[j] ** 2
+                        + hist_0 * initial_value[j] ** 2
                     )
-                    / (hist_0 + hist_1 - 1)
+                    + (
+                        (hist_1 - 1) * additional_stddev[j] ** 2
+                        + hist_1 * additional_value[j] ** 2
+                    )
                 )
-                + (
-                    (hist_0 * hist_1 * (initial_value[j] - additional_value[j]) ** 2)
-                    / ((hist_0 + hist_1) * (hist_0 + hist_1 - 1))
-                )
+                - (hist_0 + hist_1) * new_value[j] ** 2
             )
+            ** 0.5
+            / (hist_0 + hist_1 - 1)
             for j in range(len(initial_value))
         ]
 
